@@ -1,0 +1,18 @@
+{
+    "name": "loveteemo/qqconnect",
+    "description": "thinkphp 5 & qqconnect",
+    "authors": [
+        {
+            "name": "long",
+            "email": "admin@loveteemo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "loveteemo\\qqconnect\\": "/"
+        }
+    }
+}
