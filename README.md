@@ -71,8 +71,8 @@ class Base
 ```
 
 获取到的QQ数据
-``` php
-/**
+``` html
+
      * array(18) {
     ["ret"] => int(0)
     ["msg"] => string(0) ""
@@ -93,7 +93,7 @@ class Base
     ["level"] => string(1) "0"
     ["is_yellow_year_vip"] => string(1) "0"
     }
-*/
+
 ```
 
 
