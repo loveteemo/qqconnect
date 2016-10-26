@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: long <admin@loveteemo.com>
 // +----------------------------------------------------------------------
-namespace loveteeemo\qqconnect;
+namespace loveteemo\qqconnect;
 
 class QC extends Oauth{
     private $kesArr;

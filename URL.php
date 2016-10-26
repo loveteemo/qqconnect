@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: long <admin@loveteemo.com>
 // +----------------------------------------------------------------------
-namespace loveteeemo\qqconnect;
+namespace loveteemo\qqconnect;
 
 class URL{
     private $error;
@@ -40,12 +40,14 @@ class URL{
 
     /**
      * get_contents
+     * 打开Https需要开启 php.ini 的ssl extension=php_openssl.dll
      * 服务器通过get请求获得内容
      * @param string $url       请求的url,拼接后的
      * @return string           请求返回的内容
      */
     public function get_contents($url){
         if (ini_get("allow_url_fopen") == "1") {
+            // 如果这里报错，请找到对应目录新建证书文件 http://curl.haxx.se/docs/caextract.html
             $response = file_get_contents($url);
         }else{
             $ch = curl_init();

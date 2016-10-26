@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: long <admin@loveteemo.com>
 // +----------------------------------------------------------------------
-namespace loveteeemo\qqconnect;
+namespace loveteemo\qqconnect;
 
 class Recorder{
     private static $data;
@@ -18,7 +18,7 @@ class Recorder{
     public function __construct(){
         $this->error = new ErrorCase();
 
-        $this->inc = config('qqconnect');
+        $this->inc = config('auth.qqconnect');
         if(empty($this->inc)){
             $this->error->showError("20001");
         }

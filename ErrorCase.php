@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: long <admin@loveteemo.com>
 // +----------------------------------------------------------------------
-namespace loveteeemo\qqconnect;
+namespace loveteemo\qqconnect;
 
 class ErrorCase{
 
@@ -18,29 +18,16 @@ class ErrorCase{
     //错误代码
     public function __construct(){
         $this->errorMsg = array(
-            "20001" => "<h2>配置文件损坏或无法读取</h2>",
-            "30001" => "<h2>The state does not match. You may be a victim of CSRF.</h2>",
+            "20001" => "<h2>配置文件无法读取,独立配置文件请修改Recorder第22行 [配置文件名.qqconnect]</h2>",
+            "30001" => "<h2>域名不匹配，这个请求可能是CSRF攻击.</h2>",
             "50001" => "<h2>可能是服务器无法请求https协议</h2>可能未开启curl支持,请尝试开启curl支持，重启web服务器，如果问题仍未解决，请联系我们"
             );
     }
 
     //显示错误
     public function showError($code, $description = '$'){
-        $recorder = new Recorder();
-        if(! $recorder->readInc("errorReport")){
-            die();
-        }
-
         echo "<meta charset=\"UTF-8\">";
-        if($description == "$"){
-            die($this->errorMsg[$code]);
-        }else{
-            echo "<h3>error:</h3>$code";
-            echo "<h3>msg  :</h3>$description";
-            exit();
-        }
-    }
-
-    public function showTips($code, $description = '$'){
+        echo $this->errorMsg[$code];
+        die;
     }
 }
