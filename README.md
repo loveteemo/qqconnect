@@ -56,7 +56,7 @@ class Base
 {
     public function callback()
     {
-        $qc = new QC();
+        $Qc = new QC();
         $access_token =  $Qc->qq_callback();
         $openid = $Qc->get_openid();
         $Qc = new QC($access_token,$openid);
@@ -73,7 +73,7 @@ class Base
 获取到的QQ数据
 ``` html
 
-     * array(18) {
+array(18) {
     ["ret"] => int(0)
     ["msg"] => string(0) ""
     ["is_lost"] => int(0)
@@ -92,7 +92,7 @@ class Base
     ["yellow_vip_level"] => string(1) "0"
     ["level"] => string(1) "0"
     ["is_yellow_year_vip"] => string(1) "0"
-    }
+}
 
 ```
 
