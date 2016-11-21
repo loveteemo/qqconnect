@@ -27,7 +27,11 @@ class ErrorCase{
     //显示错误
     public function showError($code, $description = '$'){
         echo "<meta charset=\"UTF-8\">";
-        echo $this->errorMsg[$code];
+        if(isset($this->errorMsg[$code])){
+            echo $this->errorMsg[$code];
+        }else{
+            echo "<h2>错误代码:{$code}<a href="http://wiki.open.qq.com/wiki/%E3%80%90QQ%E7%99%BB%E5%BD%95%E3%80%91%E5%85%AC%E5%85%B1%E8%BF%94%E5%9B%9E%E7%A0%81%E8%AF%B4%E6%98%8E">手册点我</a></h2>";
+        }
         die;
     }
 }
